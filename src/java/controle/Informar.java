@@ -7,11 +7,13 @@ package controle;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import modelo.Calcular;
 
 /**
  *
@@ -34,15 +36,17 @@ public class Informar extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet Informar</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet Informar at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+            String ip = request.getParameter("ip");
+            
+            Calcular calc = new Calcular(ip);
+            
+            request.setAttribute("ip", calc.getIpMac());
+            request.setAttribute("MaskRede", calc.getMaskRede());
+            request.setAttribute("ClassRede", calc.getClasseIp());
+            request.setAttribute("EndRede", calc.getEndRede());
+            
+            RequestDispatcher rd = request.getRequestDispatcher("/resposta.jsp");
+            rd.forward(request, response);
         }
     }
 
