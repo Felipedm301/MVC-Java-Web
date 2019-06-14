@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package modelo;
 
 /**
@@ -10,5 +5,29 @@ package modelo;
  * @author Felipe
  */
 public class Calcular {
+    private String ip;
+
+    public Calcular(String ip) {
+        this.ip = ip.replaceAll(" ", "");
+    }
+
+    public String getIpStandard() {
+        return ip;
+    }
     
+    public String getMaskRede(){
+        return null;
+    }
+    
+    public String getEndRede(){
+        return null;
+    }
+    
+    public String getClasseIp(){
+        return null;
+    }
+    
+    public String getIpMac(){
+        return null;
+    }
 }
