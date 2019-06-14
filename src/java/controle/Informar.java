@@ -42,7 +42,7 @@ public class Informar extends HttpServlet {
             
             request.setAttribute("ip", calc.getIpMac());
             request.setAttribute("MaskRede", calc.getMaskRede());
-            request.setAttribute("ClassRede", calc.getClasseIp());
+            request.setAttribute("ClassIP", calc.getClasseIp());
             request.setAttribute("EndRede", calc.getEndRede());
             
             RequestDispatcher rd = request.getRequestDispatcher("/resposta.jsp");
