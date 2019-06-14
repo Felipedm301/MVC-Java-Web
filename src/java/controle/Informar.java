@@ -39,11 +39,15 @@ public class Informar extends HttpServlet {
             String ip = request.getParameter("ip");
             
             Calcular calc = new Calcular(ip);
+            String ipMac = calc.getIpMac();
+            String maskRede = calc.getMaskRede();
+            String classIp = calc.getClasseIp();
+            String endRede = calc.getEndRede();
             
-            request.setAttribute("ip", calc.getIpMac());
-            request.setAttribute("MaskRede", calc.getMaskRede());
-            request.setAttribute("ClassIP", calc.getClasseIp());
-            request.setAttribute("EndRede", calc.getEndRede());
+            request.setAttribute("ipMac", ipMac);
+            request.setAttribute("maskRede", maskRede);
+            request.setAttribute("classIp", classIp);
+            request.setAttribute("endRede", endRede);
             
             RequestDispatcher rd = request.getRequestDispatcher("/resposta.jsp");
             rd.forward(request, response);

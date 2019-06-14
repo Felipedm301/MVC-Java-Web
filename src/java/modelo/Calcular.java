@@ -15,19 +15,33 @@ public class Calcular {
         return ip;
     }
     
+    //Calcular a mascara da rede
     public String getMaskRede(){
         return null;
     }
     
+    //Calcular o Emdereco da rede
     public String getEndRede(){
         return null;
     }
     
+    //Calcular a classe do IP
     public String getClasseIp(){
         return null;
     }
     
+    //Calcular o IP da maquina
     public String getIpMac(){
-        return null;
+        String resultado = "";
+        char[] aux = getIpStandard().toCharArray();
+        for (int i = 0; i < aux.length; i++) {
+            //Excluir tudo depois da Barra(/)
+            if (aux[i] != '/') {
+                resultado += aux[i];
+            } else {
+                break;
+            }
+        }
+        return resultado;
     }
 }

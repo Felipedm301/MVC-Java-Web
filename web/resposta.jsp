@@ -20,16 +20,14 @@
         <div>
         <h4>
             <% 
-                String IP = request.getParameter("ip");
-                String ClasseIP = request.getParameter("ClasseIp");
-                String MaskRede = request.getParameter("MaskRede");
-                String EndRede = request.getParameter("EndRede");
+                String IP = request.getAttribute("ipMac").toString();
+                
             %>
             
             <%="IP da Maquina: " + IP %><br>
-            <%="Classe do IP: " + ClasseIP %><br>
-            <%="Mascara da Rede: " + MaskRede %><br>
-            <%="IP da Rede: " + EndRede %><br>
+            <%="Classe do IP: "  %><br>
+            <%="Mascara da Rede: "  %><br>
+            <%="IP da Rede: "  %><br>
         </h4>
             </div>
     </body>
