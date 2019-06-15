@@ -21,11 +21,11 @@
         <h4>
             <% 
                 String IP = request.getAttribute("ipMac").toString();
-                
+                String ClasseIP = request.getAttribute("classIp").toString();
             %>
             
             <%="IP da Maquina: " + IP %><br>
-            <%="Classe do IP: "  %><br>
+            <%="Classe do IP: " + ClasseIP %><br>
             <%="Mascara da Rede: "  %><br>
             <%="IP da Rede: "  %><br>
         </h4>

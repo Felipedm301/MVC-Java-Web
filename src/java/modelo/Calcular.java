@@ -27,7 +27,33 @@ public class Calcular {
     
     //Calcular a classe do IP
     public String getClasseIp(){
-        return null;
+        //Ip standard vira um array de char
+        char[] x = getIpStandard().toCharArray();
+        //auxiliar que recebera apenas os tres primeiros digitos do ip standard
+        char[] aux = new char[3];
+        for (int i = 0; i < x.length; i++) {
+            if (x[i] != '.') {
+                aux[i] = x[i];
+            } else {
+                break;
+            }
+        }
+        //passando o aux para uma variavel inteira
+        int intIP = Integer.parseInt(String.valueOf(aux));
+        String resultado = "";
+        //classificando o ip
+        if ((intIP >= 0) && (intIP <= 127)) {
+            resultado = "A";
+        } else if ((intIP >= 128) && (intIP <= 191)) {
+            resultado = "B";
+        } else if ((intIP >= 192) && (intIP <= 223)) {
+            resultado = "C";
+        } else if ((intIP >= 224) && (intIP <= 239)) {
+            resultado = "D";
+        } else if ((intIP >= 240) && (intIP <= 255)) {
+            resultado = "E";
+        }
+        return resultado;
     }
     
     //Calcular o IP da maquina
