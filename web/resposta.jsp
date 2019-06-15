@@ -22,13 +22,14 @@
             <% 
                 String IP = request.getAttribute("ipMac").toString();
                 String ClasseIP = request.getAttribute("classIp").toString();
-                String MaskRede =request.getAttribute("maskRede").toString();
+                String MaskRede = request.getAttribute("maskRede").toString();
+                String IPRede = request.getAttribute("endRede").toString();
             %>
             
             <%="IP da Maquina: " + IP %><br>
             <%="Classe do IP: " + ClasseIP %><br>
             <%="Mascara da Rede: " + MaskRede %><br>
-            <%="IP da Rede: "  %><br>
+            <%="IP da Rede: " + IPRede %><br>
         </h4>
             </div>
     </body>

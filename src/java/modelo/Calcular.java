@@ -89,9 +89,31 @@ public class Calcular {
         return convertido;
     }
     
-    //Calcular o Emdereco da rede
+    //Calcular o Endereco da Rede
     public String getEndRede(){
-        return null;
+        String resultado = "";
+        //Array para percorrer com a estrutura
+        char[] aux = getIpStandard().toCharArray();
+        int x = 0;
+        
+        //Quando o encontrar a barra finaliza a estrutura
+        for (int i = 0; i < aux.length; i++) {
+            if (aux[i] != '/') {
+                resultado += aux[i];
+            } else {
+                break;
+            }
+            if (aux[i] == '.') {
+                x += 1;
+            }
+            if (x == 3) {
+                break;
+            }
+        }
+        //Acrescenta um ZERO depois do ultimo ponto(.)
+        resultado += '0';
+        //Retorna o endereço da rede
+        return resultado;
     }
     
     //Calcular a classe do IP
